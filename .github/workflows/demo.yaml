@@ -1,1 +1,26 @@
+name: Demo
 
+on:
+  workflow_dispatch:
+    inputs:
+      areYouFeelingGood: 
+        description: "Are you good enough ?"
+
+jobs:
+  Greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say_hello
+        run: echo "HI I am here bro !!! in GITHUB ACTIONS"
+  Job2:
+    runs-on: ubuntu-latest
+    needs: [Greeting]
+    steps:
+      - name: Step2
+        run: echo "This step I belive in GA world from Greeting !!!"
+      - name: Step3
+        if: ${{ inputs.areYouFeelingGood }}
+        run: echo "I am great bro here very confusing !!!"
+      - name: Step4
+        if: ${{ !inputs.areYouFeelingGood }}
+        run: echo "I am not good here bro.. need escape from GA world.. !!!"
