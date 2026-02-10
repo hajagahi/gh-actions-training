@@ -35,6 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say_hello
+        if: ${{env.MY_GREETINGS == 'WORLD' }}
         run: echo "HI I am here bro !!! in GITHUB ACTIONS"
   Job2:
     runs-on: ubuntu-latest
