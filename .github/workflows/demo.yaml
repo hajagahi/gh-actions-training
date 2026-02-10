@@ -38,10 +38,12 @@ jobs:
         run: echo "HI I am here bro !!! in GITHUB ACTIONS"
   Job2:
     runs-on: ubuntu-latest
+    env:
+      MY_VAR: RAJA bhai
     needs: [Greeting]
     steps:
       - name: Step2
-        run: echo "This step I belive in GA world from Greeting !!!"
+        run: echo "This step I belive in GA world from Greeting !!! ${{env.MY_VAR}}"
       - name: Step3
         if: ${{ inputs.areYouFeelingGood }}
         run: echo "I am great bro here very confusing !!!"
