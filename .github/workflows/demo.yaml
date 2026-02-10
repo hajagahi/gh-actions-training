@@ -37,6 +37,8 @@ jobs:
       - name: Say_hello
         if: ${{env.MY_GREETINGS != 'WORLD' }}
         run: echo "HI I am here bro !!! in GITHUB ACTIONS"
+ 
+        
   Job2:
     runs-on: ubuntu-latest
     env:
@@ -53,3 +55,12 @@ jobs:
         run: echo "I am not good here bro.. need escape from GA world.. !!!"
       - name: Step5
         run: echo my greeting code is ${{env.MY_GREETINGS}} from ${{env.MY_VAR}} 
+  Greeting1:
+    runs-on: ubuntu-latest
+    needs: [Job2]
+    steps:
+      - name: execute_JOB2
+        run: echo "testing needs feature"
+        if: ${{ env.MY_GREETINGS == 'Hello' }}
+      - name:
+        run: echo ${{env.MY_GREETINGS}}
