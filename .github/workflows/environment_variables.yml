@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Step1
-        run: echo "Selected evs "+":"+"  ${{ inputs.target_env }}"
+        run: echo "Selected evs  ${{ inputs.target_env }}"
       - name: Step2
         run: 
           echo "Welcome, ${{ inputs.user_name }}"
