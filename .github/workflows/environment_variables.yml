@@ -23,5 +23,5 @@ jobs:
         run: echo "Selected evs  ${{ inputs.target_env }}"
       - name: Step2
         run: 
-          echo "Welcome, ${{ inputs.user_name }}"
+          echo "Welcome ${{ inputs.user_name }}"
           echo " ${{ vars.ENV_GREETING }} from ${{ inputs.user_name }}           
