@@ -23,7 +23,7 @@ on:
   workflow_dispatch:
     inputs:
       areYouFeelingGood: 
-        description: "Are you good enough ?"
+        description: "Are you good enough ? HELLO "
 
 
 env:
