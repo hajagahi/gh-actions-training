@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MY_VAR: RAJA bhai
-    needs: [Greeting]
+    needs: [Greeting1]
     steps:
       - name: Step2
         run: echo "This step I belive in GA world from Greeting !!! ${{env.MY_VAR}}"
@@ -57,7 +57,7 @@ jobs:
         run: echo my greeting code is ${{env.MY_GREETINGS}} from ${{env.MY_VAR}} 
   Greeting1:
     runs-on: ubuntu-latest
-    needs: [Job2]
+    needs: [Greeting]
     steps:
       - name: execute_JOB2
         run: echo "testing needs feature"
